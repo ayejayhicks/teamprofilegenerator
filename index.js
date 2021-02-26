@@ -1,8 +1,9 @@
-const htmlHelper = require("./src/htmlhelper.js");
+const Manager = require("./templates/manager.js");
+const Intern = require("./templates/intern");
+const Engineer = require("./templates/engineer");
 const inquirer = require("inquirer");
 const fs = require("fs");
 // const util = require("util");
-
 var Prompt = require("prompt-expand");
 // const htmlHelper = require("./htmlHelper");
 // const writeFileAsync = util.promisify(fs.writeFile);
@@ -26,24 +27,29 @@ function writeToFile(fileName, data) {
 // const writeFileAsync = promisify(fs.writeFile);
 
 // This prompts for employee input
-function intake() {
+function initial() {
     console.log("Employee Management Portal");
     console.log("Please Create a Profile");
     return inquirer.prompt([
         {
             type: "input",
+            message: "What is your Name?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What is your Employee ID?",
+            name: "id"
+        },
+        {
+            type: "input",
+            message: "What is your Email?",
+            name: "email"
+        },
+        {
+            type: "input",
             message: "What is your Office Number?",
             name: "officenumber"
-        },
-        {
-            type: "input",
-            message: "Developer Info",
-            name: "questions"
-        },
-        {
-            type: "input",
-            message: "What is your GitHub email",
-            name: "githubemail"
         },
     ])
     // gathers the data to create the html after user input
@@ -61,12 +67,14 @@ function intake() {
     });
     // employee.push
 }
-intake()
+initial()
 
 // our function that will prompt the user to either...
 // 1. add an engineer
 // 2. add an intern
 // 3. finish building the team
+
+// our function that will prompt the user to add an intern's school
 function addNewEmployee ( ) {
     return inquirer.prompt([
         {
@@ -77,8 +85,8 @@ function addNewEmployee ( ) {
         }
     ])
     .then( response => {
-        console.log(response.add);
-        if (response.add == 'Engineer') {
+        console.log(response.newmember);
+        if (response.newmember == 'Engineer') {
             return promptEngineerInfo();
         }
         // const html = index.html (data);
