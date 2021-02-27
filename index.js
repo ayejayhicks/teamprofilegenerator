@@ -13,7 +13,7 @@ const employee = [];
 let html = ''
 
 // Creates a function to write README file
-function writeToFile(fileName) {
+function writeToFile(filename) {
     fs.writeFile(filename, html, function (err) {
 
         if (err) {

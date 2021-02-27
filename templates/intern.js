@@ -21,7 +21,7 @@ function internInfo (internInfo) {
     <div class="bg-dark card-body">
         <h3 class="card-title">Employee Info</h3>
         <h4 class="card-tite">${internInfo.email}</h4>
-        <h4 class="card-title">${internInfo.email}</h4>
+        <h4 class="card-title">${internInfo.school}</h4>
         <h4 class="card-title">${internInfo.newmember}</h4>
     </div>
     <div class="card-footer text-muted">

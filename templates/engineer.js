@@ -1,4 +1,4 @@
-function engineerInfo (engineerInfo) {
+function engineerInfo(engineerInfo) {
     return `
     <!DOCTYPE html>
     <html lang="en">
