@@ -117,7 +117,7 @@ function promptInternInfo () {
             name: "school"
         },
     ]).then(internInfo => {
-        html += intern(internInfo)
+        html += Intern(internInfo)
         console.log(internInfo);
         addNewEmployee()
     });
@@ -147,7 +147,7 @@ function promptEngineerInfo() {
             name: "github"
         },
     ]).then(engineerInfo => {
-        html += engineer(engineerInfo)
+        html += Engineer(engineerInfo)
         console.log(engineerInfo);
         //1. use engineerInfo to create a new Engineer() and push it to our employees array
         addNewEmployee();
