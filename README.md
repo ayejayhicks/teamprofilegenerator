@@ -16,7 +16,7 @@ NPM
 ---
 ### Links
 [Github] (https://github.com/ayejayhicks/readmegenerator)  
-[Team Profile Generator]
+[Team Profile Generator] (enter screencastify link here)
 
 ### Screenshots  
 

@@ -1,36 +1,22 @@
-// goal: pass an array of employees to our fumction and loop through array
+// goal: pass an array of employees to our function and loop through array
 
 function internInfo (internInfo) {
     return `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
         <div class="card text-center">
             <div class="card-header">
-
+        <h1>class="card-title">Intern</h1>
         <h1>${internInfo.name}</h1>
         <h2>${internInfo.ID}</h2>
     </div>
-    <div class="bg-dark card-body">
-        <h3 class="card-title">Employee Info</h3>
+    <div class="bg-trans card-body">
         <h4 class="card-tite">${internInfo.email}</h4>
         <h4 class="card-title">${internInfo.school}</h4>
-        <h4 class="card-title">${internInfo.newmember}</h4>
-    </div>
-    <div class="card-footer text-muted">
-    
     </div>
     </div>
-    
-    </body>
-    </html>`
+    </div>
+    </div>`
     };
-    // htmlHelperInfo()
+    
     module.exports = internInfo;

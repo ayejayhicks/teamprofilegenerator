@@ -11,10 +11,29 @@ const util = require("util");
 // every time we create a new employee, push to our employees array
 const employee = [];
 let html = ''
+let openhtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Portal</title>
+    <link rel="stylesheet" href="style.css">
+    // <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.boothstrapcdn.com/bootstrap/4.5.2/css.bootstrap.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5..0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHygcpbZJO/tY9U17kGk-f1S0CWuKcCD3818YkeH8z8QjE0GmW1gYUSS9FOnJ0"
+</head>
+<body>`
+let closehtml = `
+<h3> This completes my team with the members needed. </h3>
+</div>
+</div>
+</body>
+</html>`
 
 // Creates a function to write README file
 function writeToFile(filename) {
-    fs.writeFile(filename, html, function (err) {
+    fs.writeFile(filename, openhtml += closehtml, function (err) {
 
         if (err) {
             return console.log(err);
