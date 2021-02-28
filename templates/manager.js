@@ -1,4 +1,4 @@
-function managerData (data) {
+function managerInfo (data) {
     return `
     <div class="container-fluid">
     <div class="jumbotron">My Team</div>
@@ -7,16 +7,16 @@ function managerData (data) {
     <div class="card-body">
     <div class="card text-center">
         <div class="card-header">
-        <h1>Manager Info</h1>
-        <h1>${managerData.name}</h1>
-        <h2>${managerData.ID}</h2>
+        <h1>${managerInfo.name}</h1>
+        <h2>Manager</h2>
+        <h2>${managerInfo.ID}</h2>
     </div>
     <div class="bg-trans card-body">
-        <h5 class="card-tite">${managerData.email}</h5>
-        <h5 class="card-title">${managerData.email}</h5>
+        <h3 class="card-title">${managerInfo.email}</h3>
+        <h3 class="card-title">${managerInfo.officenumber}</h3>
     </div>
     </div>
     </div>
     </div>`
     };
-    module.exports = managerData;
+    module.exports = managerInfo;

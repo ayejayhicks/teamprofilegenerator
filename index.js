@@ -1,4 +1,4 @@
-const Manager = require("./templates/manager.js");
+const Manager = require("./templates/manager");
 const Intern = require("./templates/intern");
 const Engineer = require("./templates/engineer");
 const inquirer = require("inquirer");
@@ -19,9 +19,9 @@ let openhtml = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management Portal</title>
     <link rel="stylesheet" href="style.css">
-    // <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://stackpath.boothstrapcdn.com/bootstrap/4.5.2/css.bootstrap.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5..0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHygcpbZJO/tY9U17kGk-f1S0CWuKcCD3818YkeH8z8QjE0GmW1gYUSS9FOnJ0"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5..0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHygcpbZJO/tY9U17kGk-f1S0CWuKcCD3818YkeH8z8QjE0GmW1gYUSS9FOnJ0"></script>
 </head>
 <body>`
 let closehtml = `
@@ -33,7 +33,7 @@ let closehtml = `
 
 // Creates a function to write README file
 function writeToFile(filename) {
-    fs.writeFile(filename, openhtml += closehtml, function (err) {
+    fs.writeFile(filename, openhtml += html += closehtml, function (err) {
 
         if (err) {
             return console.log(err);
@@ -72,8 +72,8 @@ function initial() {
         },
     ])
     // gathers the data to create the html after user input
-    .then(function (managerData) {
-        console.log(managerData)
+    .then(function (managerInfo) {
+        console.log(managerInfo)
         // use our managerData to create a new Manager() and push that to our employees array
         //
         return addNewEmployee();
@@ -96,7 +96,7 @@ function addNewEmployee ( ) {
             type: "list",
             message: "Who would you like to add to your Team?",
             name: "newmember",
-            choices: ['Engineer', 'Intern', 'Finish building my Team']
+            choices: ['Engineer', 'Intern', 'Manager', 'Finish building my Team']
         }
     ])
     .then( response => {
@@ -105,10 +105,42 @@ function addNewEmployee ( ) {
             return promptEngineerInfo();
         } else if (response.newmember == 'Intern') {
             return promptInternInfo();
-        } else if (response.newmember == 'Finish building my Team') {
+        } else if (response.newmember == 'Manager') {
+            return promptManagerInfo();
+        }  else if (response.newmember == 'Finish building my Team') {
             return writeToFile("./dist/index.html");
         }
     })
+}
+
+function promptManagerInfo () {
+    return inquirer.prompt ([
+        // we also need to add questions for name, email, id
+        {
+            type: "input",
+            message: "What is your Manager's Name?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What is your Manager's employee ID?",
+            name: "ID"
+        },
+        {
+            type: "input",
+            message: "What is your Manager's email?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is your Manager's office number?",
+            name: "officenumber"
+        },
+    ]).then(managerInfo => {
+        html += Manager(managerInfo)
+        console.log(managerInfo);
+        addNewEmployee()
+    });
 }
 
 // our function that will prompt the user to add an intern's school
