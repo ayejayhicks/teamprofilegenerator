@@ -17,13 +17,80 @@ let openhtml = `<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Management Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://stackpath.boothstrapcdn.com/bootstrap/4.5.2/css.bootstrap.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5..0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHygcpbZJO/tY9U17kGk-f1S0CWuKcCD3818YkeH8z8QjE0GmW1gYUSS9FOnJ0"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Employee Management Portal</title>
+   
 </head>
+
+<style>
+.row {
+display: flex;
+justify-content: center;
+justify-content: space-evenly;
+margin: 100px;
+}
+.card-header {
+background-color: rgb(6, 73, 161);
+}
+</style>
+<div class="container-fluid">
+    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;" text-align="center">
+        <div class="jumbotron">My Team</div>
+        <div class="row">
+        </div>
+
+<div class="row">
+<div class="card text-dark bg-light mb-3" style="max-width: 18rem;" text-align="center">
+    <div class="card-header"></div>
+    <div class="card-header"></div>
+    <div class="card-body">
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+    </div>
+</div>
+<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header"></div>
+    <div class="card-header"></div>
+    <div class="card-body">
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+    </div>
+</div>
+<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header"></div>
+    <div class="card-header"></div>
+    <div class="card-body">
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+    </div>
+</div>
+</div>
+<div class="row">
+<div class="card text-dark bg-light mb-3" style="max-width: 18rem;" text-align="center">
+    <div class="card-header"></div>
+    <div class="card-header"></div>
+    <div class="card-body">
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+    </div>
+</div>
+<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header"></div>
+    <div class="card-header"></div>
+    <div class="card-body">
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+        <script src="code.js"></script>
 <body>`
+
 let closehtml = `
 <h3> This completes my team with the members needed. </h3>
 </div>
@@ -71,17 +138,17 @@ function initial() {
             name: "officenumber"
         },
     ])
-    // gathers the data to create the html after user input
-    .then(function (managerInfo) {
-        console.log(managerInfo)
-        // use our managerData to create a new Manager() and push that to our employees array
-        //
-        return addNewEmployee();
-    })
+        // gathers the data to create the html after user input
+        .then(function (managerInfo) {
+            console.log(managerInfo)
+            // use our managerData to create a new Manager() and push that to our employees array
+            //
+            return addNewEmployee();
+        })
 
-    .catch(function (err) {
-        console.log(err);
-    });
+        .catch(function (err) {
+            console.log(err);
+        });
 }
 console.log('before initial')
 initial()
@@ -90,7 +157,7 @@ initial()
 // 1. add an engineer
 // 2. add an intern
 // 3. finish building the team
-function addNewEmployee ( ) {
+function addNewEmployee() {
     return inquirer.prompt([
         {
             type: "list",
@@ -99,22 +166,22 @@ function addNewEmployee ( ) {
             choices: ['Engineer', 'Intern', 'Manager', 'Finish building my Team']
         }
     ])
-    .then( response => {
-        console.log(response.newmember);
-        if (response.newmember == 'Engineer') {
-            return promptEngineerInfo();
-        } else if (response.newmember == 'Intern') {
-            return promptInternInfo();
-        } else if (response.newmember == 'Manager') {
-            return promptManagerInfo();
-        }  else if (response.newmember == 'Finish building my Team') {
-            return writeToFile("./dist/index.html");
-        }
-    })
+        .then(response => {
+            console.log(response.newmember);
+            if (response.newmember == 'Engineer') {
+                return promptEngineerInfo();
+            } else if (response.newmember == 'Intern') {
+                return promptInternInfo();
+            } else if (response.newmember == 'Manager') {
+                return promptManagerInfo();
+            } else if (response.newmember == 'Finish building my Team') {
+                return writeToFile("./dist/index.html");
+            }
+        })
 }
 
-function promptManagerInfo () {
-    return inquirer.prompt ([
+function promptManagerInfo() {
+    return inquirer.prompt([
         // we also need to add questions for name, email, id
         {
             type: "input",
@@ -144,8 +211,8 @@ function promptManagerInfo () {
 }
 
 // our function that will prompt the user to add an intern's school
-function promptInternInfo () {
-    return inquirer.prompt ([
+function promptInternInfo() {
+    return inquirer.prompt([
         // we also need to add questions for name, email, id
         {
             type: "input",
@@ -176,7 +243,7 @@ function promptInternInfo () {
 
 // our function that will prompt the user to add an Engineer's github username
 function promptEngineerInfo() {
-    return inquirer.prompt ([
+    return inquirer.prompt([
         {
             type: "input",
             message: "What is your Engineer's Name?",
