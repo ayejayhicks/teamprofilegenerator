@@ -38,9 +38,7 @@ background-color: rgb(6, 73, 161);
 </style>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-  <div class= text-align="center"></div>
     <h1 class="display-4">My Team</h1>
-    
   </div>
 </div>
 
@@ -70,7 +68,7 @@ background-color: rgb(6, 73, 161);
         <p class="card-text"></p>
         <p class="card-text"></p>
         <p class="card-text"></p>
-    </div>  
+    </div>
 </div>
 </div>
 <div class="row">
