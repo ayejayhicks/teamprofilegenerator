@@ -140,7 +140,7 @@ function initial() {
     ])
         // gathers the data to create the html after user input
         .then(function (managerInfo) {
-            console.log(managerInfo)
+            console.log('MANAGER INFOR LINE 143', managerInfo)
             // use our managerData to create a new Manager() and push that to our employees array
             //
             return addNewEmployee();
@@ -191,7 +191,7 @@ function promptManagerInfo() {
         {
             type: "input",
             message: "What is your Manager's employee ID?",
-            name: "ID"
+            name: "id"
         },
         {
             type: "input",
@@ -201,13 +201,16 @@ function promptManagerInfo() {
         {
             type: "input",
             message: "What is your Manager's office number?",
-            name: "officenumber"
+            name: "officeNumber"
         },
     ]).then(answer => {
-        let manager = new Manager (answer.getName, answer.getID, answer.getEmail, answer.getOfficeNumber)
-        employee.push(manager)
-        console.log(answer)
-        addNewEmployee();
+
+        console.log('ANSWER--->', answer)
+        let manager = new Manager(answer.name, answer.id, answer.email, answer.officeNumber)
+       // employee.push(manager)
+        console.log('MANAGER-->', manager)
+        //addNewEmployee();
+      
     });
 }
 
@@ -236,9 +239,10 @@ function promptInternInfo() {
             name: "school"
         },
     ]).then(answer => {
-        let intern = new Intern (intern.getName, intern.getID, intern.getEmail, intern.getSchool)
-        employee.push(intern)
-        console.log(answer)
+        console.log('ANSWER ---> ', answer)
+        let intern = new Intern (answer.name, answer.id, answer.email, answer.school)
+        // employee.push(intern)
+        console.log('INTERN --->', intern)
         addNewEmployee();
     });
 }
@@ -267,9 +271,10 @@ function promptEngineerInfo() {
             name: "github"
         },
     ]).then(answer => {
-        let engineer = new Engineer (answer.getName, answer.getID, answer.getEmail, answer.getGithub)
-        employee.push(engineer)
-        console.log(answer)
+        console.log('ENGINEER --->', answer)
+        let engineer = new Engineer(answer.name, answer.id, answer.email, answer.github)
+        // employee.push(engineerInfo)
+        console.log('ENGINEER --->', engineer)
         //1. use engineerInfo to create a new Engineer() and push it to our employees array
         addNewEmployee();
     })
