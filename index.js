@@ -209,7 +209,7 @@ function promptManagerInfo() {
         let manager = new Manager(answer.name, answer.id, answer.email, answer.officeNumber)
        // employee.push(manager)
         console.log('MANAGER-->', manager)
-        //addNewEmployee();
+        addNewEmployee();
       
     });
 }
