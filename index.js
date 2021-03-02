@@ -203,10 +203,11 @@ function promptManagerInfo() {
             message: "What is your Manager's office number?",
             name: "officenumber"
         },
-    ]).then(managerInfo => {
-        html += Manager(managerInfo)
-        console.log(managerInfo);
-        addNewEmployee()
+    ]).then(answer => {
+        let manager = new Manager (answer.getName, answer.getID, answer.getEmail, answer.getOfficeNumber)
+        employee.push(manager)
+        console.log(answer)
+        addNewEmployee();
     });
 }
 
@@ -234,10 +235,11 @@ function promptInternInfo() {
             message: "Where did your Intern go to school?",
             name: "school"
         },
-    ]).then(internInfo => {
-        html += Intern(internInfo)
-        console.log(internInfo);
-        addNewEmployee()
+    ]).then(answer => {
+        let intern = new Intern (intern.getName, intern.getID, intern.getEmail, intern.getSchool)
+        employee.push(intern)
+        console.log(answer)
+        addNewEmployee();
     });
 }
 
@@ -264,9 +266,10 @@ function promptEngineerInfo() {
             message: "Where is your Engineer's github username?",
             name: "github"
         },
-    ]).then(engineerInfo => {
-        html += Engineer(engineerInfo)
-        console.log(engineerInfo);
+    ]).then(answer => {
+        let engineer = new Engineer (answer.getName, answer.getID, answer.getEmail, answer.getGithub)
+        employee.push(engineer)
+        console.log(answer)
         //1. use engineerInfo to create a new Engineer() and push it to our employees array
         addNewEmployee();
     })
