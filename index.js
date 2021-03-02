@@ -36,11 +36,13 @@ margin: 100px;
 background-color: rgb(6, 73, 161);
 }
 </style>
-<div class="container-fluid">
-    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;" text-align="center">
-        <div class="jumbotron">My Team</div>
-        <div class="row">
-        </div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+  <div class= text-align="center"></div>
+    <h1 class="display-4">My Team</h1>
+    
+  </div>
+</div>
 
 <div class="row">
 <div class="card text-dark bg-light mb-3" style="max-width: 18rem;" text-align="center">
@@ -68,7 +70,7 @@ background-color: rgb(6, 73, 161);
         <p class="card-text"></p>
         <p class="card-text"></p>
         <p class="card-text"></p>
-    </div>
+    </div>  
 </div>
 </div>
 <div class="row">

@@ -1,16 +1,17 @@
 function managerInfo (data) {
     return `
-    <div class="card" style="width: 30rem;">
+    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header"></div>
+    <div class="card-header"></div>
     <div class="card-body">
-    <div class="card text-center">
         <div class="card-header">
-        <h2>${managerInfo.name}</h2>
-        <h3>Manager</h3>
-        <h4>${managerInfo.ID}</h4>
+        <h3>${managerInfo.name}</h3>
+        <h4>Manager</h4>
+        <h6>${managerInfo.ID}</h6>
     </div>
     <div class="bg-trans card-body">
-        <h4 class="card-title">${managerInfo.email}</h4>
-        <h4 class="card-title">${managerInfo.officenumber}</h4>
+        <h6 class="card-title">${managerInfo.email}</h6>
+        <h6 class="card-title">${managerInfo.officenumber}</h6>
     </div>
     </div>
     </div>

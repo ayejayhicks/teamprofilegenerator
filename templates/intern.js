@@ -1,16 +1,17 @@
 function internInfo(internInfo) {
     return `
-    <div class="card" style="width: 30rem;">
+    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header"></div>
+    <div class="card-header"></div>
     <div class="card-body">
-    <div class="card text-center">
             <div class="card-header">
-        <h2>${internInfo.name}</h2>
-        <h3>Intern</h3>
-        <h4>${internInfo.ID}</h4>
+        <h3>${internInfo.name}</h3>
+        <h4>Intern</h4>
+        <h6>${internInfo.ID}</h6>
     </div>
     <div class="bg-trans card-body">
-        <h4 class="card-title">${internInfo.email}</h4>
-        <h4 class="card-title">${internInfo.school}</h4>
+        <h6 class="card-title">${internInfo.email}</h6>
+        <h6 class="card-title">${internInfo.school}</h6>
     </div>
     </div>
     </div>
