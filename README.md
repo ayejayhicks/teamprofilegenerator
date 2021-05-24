@@ -7,7 +7,7 @@ The purpose of this assignment was to generate a Team Profile so as a Manager I 
 Using Node.js I was tasked with building a comand-line application that takes in information about employees and then generates an HTML webpage that displays summaries for each person. 
 
 ## Challenges and Successes
-There are so many files to work with for this homework assignment. I found myself floating through each folder to determine which file was used for what. Testing is new, I am unclear on how to write a test as well as incorporate classes into my code. My biggest success was being able to colaborate with other students to understand various parts of the assignment.
+There are so many files to work with for this homework assignment. I found myself floating through each folder to determine which file was used for what. Testing is new, I am unclear on how to write a test as well as incorporate classes into my code. My biggest success was being able to collaborate with other students to understand various parts of the assignment.
 
 ## Technologies Used
 Node.js  
@@ -17,7 +17,7 @@ Screencastify
 ---
 ### Links
 [Github] (https://github.com/ayejayhicks/readmegenerator)  
-[Team Profile Generator] (enter screencastify link here)
+[Team Profile Generator] (https://drive.google.com/file/d/1oK2Fg1BOcrmXpAt3A8TMBnKL2xSI2IEQ/view)
 
 ### Screenshots  
 

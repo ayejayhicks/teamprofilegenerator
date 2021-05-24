@@ -165,7 +165,7 @@ function finishHtml() {
 </body>
 </html>`;
 
-    fs.appendFile("./src/htmlhelper.js", html, function (err) {
+    fs.appendFile("./output/helper.html", html, function (err) {
         if (err) {
             console.log(err);
         };
