@@ -95,7 +95,7 @@ function startHtml() {
         </nav>
         <div class="container">
             <div class="row">`;
-    fs.writeFile("./src/htmlhelper.js", html, function(err) {
+    fs.writeFile("./output/helper.html", html, function(err) {
         if (err) {
             console.log(err);
         }
@@ -148,7 +148,7 @@ function addHtml(member) {
         </div>`
         }
         console.log("add team member");
-        fs.appendFile("./src/htmlhelper.js", data, function (err) {
+        fs.appendFile("./output/helper.html", data, function (err) {
             if (err) {
                 return reject(err);
             };
